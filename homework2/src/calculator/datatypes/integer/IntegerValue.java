@@ -3,6 +3,10 @@ package calculator.datatypes.integer;
 import calculator.AbstractValue;
 import calculator.DivisionByZeroException;
 
+
+import calculator.AbstractValue;
+import calculator.DivisionByZeroException;
+
 public class IntegerValue extends AbstractValue {
 	private final int value;
 

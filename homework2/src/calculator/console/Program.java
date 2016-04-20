@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import calculator.AbstractValueParser;
 import calculator.Calculator;
+import calculator.datatypes.frac.FracValueParser;
 import calculator.datatypes.integer.IntegerValueParser;
 import calculator.datatypes.real.RealValueParser;
 
@@ -17,8 +18,8 @@ public class Program {
 
 	public Program() {
 		scanner = new Scanner(System.in);
-		valueParsers = new AbstractValueParser[] { new IntegerValueParser(),
-				new RealValueParser() };
+		valueParsers = new AbstractValueParser[] { new IntegerValueParser(), new RealValueParser(),
+				new FracValueParser()};
 		AbstractValueParser parser = inputValueParser();
 		System.out.println("Работаем с типом '" + parser.getDatatypeName()
 				+ "'");
