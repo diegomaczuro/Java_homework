@@ -3,6 +3,7 @@ package calculator.datatypes.real;
 import calculator.AbstractValue;
 import calculator.DivisionByZeroException;
 
+
 public class RealValue extends AbstractValue {
 
 	private final double value;

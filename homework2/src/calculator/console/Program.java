@@ -4,9 +4,11 @@ import java.util.Scanner;
 
 import calculator.AbstractValueParser;
 import calculator.Calculator;
+import calculator.datatypes.complex.ComplexValueParser;
 import calculator.datatypes.frac.FracValueParser;
 import calculator.datatypes.integer.IntegerValueParser;
 import calculator.datatypes.real.RealValueParser;
+import calculator.datatypes.vector.VectorValueParser;
 
 public class Program {
 
@@ -16,10 +18,11 @@ public class Program {
 
 	private AbstractValueParser[] valueParsers;
 
+
 	public Program() {
 		scanner = new Scanner(System.in);
 		valueParsers = new AbstractValueParser[] { new IntegerValueParser(), new RealValueParser(),
-				new FracValueParser()};
+				new FracValueParser(), new ComplexValueParser(), new VectorValueParser()};
 		AbstractValueParser parser = inputValueParser();
 		System.out.println("Работаем с типом '" + parser.getDatatypeName()
 				+ "'");
@@ -29,6 +32,8 @@ public class Program {
 	private AbstractValueParser inputValueParser() {
 		showChoises();
 		int choise = scanner.nextInt();
+
+		System.out.println(choise);
 		if (choise >= 1 && choise <= valueParsers.length)
 			return valueParsers[choise - 1];
 		else {
@@ -44,7 +49,8 @@ public class Program {
 					+ valueParsers[i].getDatatypeName());
 	}
 
-	public static void main(String args[]) {
+	public static void main(String
+									args[]) {
 		try {
 			Program instance = new Program();
 			instance.run(args);
@@ -54,12 +60,14 @@ public class Program {
 	}
 
 	private void run(String[] args) {
+
 		while (true) {
 			String arg1 = scanner.next();
 			if (arg1.equals("exit"))
 				break;
 			String op = scanner.next();
 			String arg2 = scanner.next();
+
 			try {
 				System.out.println(" = " + calc.calculate(arg1, op, arg2));
 

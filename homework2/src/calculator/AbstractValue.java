@@ -1,5 +1,7 @@
 package calculator;
 
+import calculator.datatypes.frac.FracValue;
+
 public abstract class AbstractValue {
 	public abstract AbstractValue add(AbstractValue operand)
 			throws OperationNotSupportedException;

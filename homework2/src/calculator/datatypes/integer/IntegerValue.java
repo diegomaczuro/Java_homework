@@ -4,8 +4,7 @@ import calculator.AbstractValue;
 import calculator.DivisionByZeroException;
 
 
-import calculator.AbstractValue;
-import calculator.DivisionByZeroException;
+import calculator.datatypes.frac.FracValue;
 
 public class IntegerValue extends AbstractValue {
 	private final int value;

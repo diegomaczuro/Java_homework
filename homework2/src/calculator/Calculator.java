@@ -26,6 +26,7 @@ public class Calculator {
 			return left.div(right);
 		if (operation.equals("*"))
 			return left.mul(right);
+
 		throw new OperationNotSupportedException(operation);
 	}
 }
