@@ -1,3 +1,5 @@
+import java.io.File;
+
 /**
  * Created by shido on 31.05.16.
  */
@@ -13,12 +15,15 @@ public class LoadData {
             encodingIn =  args[1];
             filenameOut =  args[2];
             encodingOut =  args[3];
+            System.out.println(args[0]);
+            System.out.println(args[1]);
+            System.out.println(args[2]);
+            System.out.println(args[3]);
         }
         catch (Exception e) {
             System.out.println("Неправильные аргументы командной строки");
             return;
         }
-
 
         try {
 
@@ -36,3 +41,5 @@ public class LoadData {
         }
     }
 }
+
+//Параметры для запуска из командной строки: test_input.txt UTF-8 test_output.txt windows-1251
